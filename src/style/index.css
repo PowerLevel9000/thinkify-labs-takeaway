@@ -29,8 +29,7 @@ body {
 }
 
 /* Reset form elements */
-input, textarea, select, button {
-  border: none;
+input, textarea, select {
   outline: none;
   background: none;
   font-family: inherit;
