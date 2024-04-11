@@ -4,6 +4,7 @@ const initialState = {
     titleCount: 0,
     isDrawerOpen: false,
     titles: [],
+    filteredTitles: []
 }
 
 const titleSlice = createSlice({
@@ -28,6 +29,14 @@ const titleSlice = createSlice({
             return newState
         },
 
+        filteredTitles: (state, { payload }) => {
+            const newState = {
+                ...state,
+                filteredTitles: payload
+            }
+            return newState
+        },
+
         drawerOpen: (state) => ({
             ...state,
             isDrawerOpen: true
@@ -40,5 +49,5 @@ const titleSlice = createSlice({
     }
 });
 
-export const { addTitles, drawerClose, drawerOpen } = titleSlice.actions;
+export const { addTitles, drawerClose, drawerOpen, filteredTitles } = titleSlice.actions;
 export default titleSlice.reducer;

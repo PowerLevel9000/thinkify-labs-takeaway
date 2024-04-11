@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { drawerClose, drawerOpen } from '../../../features/creative-title/titleSlice'
 
 const Home = () => {
-  const { isDrawerOpen, titles, titleCount } = useSelector((state) => state.title);
+  const { isDrawerOpen, titles, filteredTitles } = useSelector((state) => state.title);
   const dispatch = useDispatch();
 
   const asideRef = useRef(null);
@@ -28,18 +28,19 @@ const Home = () => {
   return (
     <>
       <main>
-        <section>
+        <section className="filter">
           <FilterBy />
         </section>
-        <section>
+        <section className="capacity-bar">
           <CapacityBar />
           <button
+            className='add-creative-btn btn-page'
             onClick={() => dispatch(drawerOpen())}
             disabled={isDrawerOpen}
           >+ Add Creative</button>
         </section>
         <section className='title-container'>
-          {titles && titles.map((item) => <Title {...item} />)}
+          {(filteredTitles || titles) && (filteredTitles || titles).map((item) => <Title {...item} />)}
         </section>
       </main>
       <aside ref={asideRef} style={{ right: isDrawerOpen ? "0" : "-35%" }}>
