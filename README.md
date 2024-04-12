@@ -1,46 +1,48 @@
-# Getting Started with Create React App and Redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
-## Available Scripts
+<div align="center">
+  <img src="./document/personal-branding/adarsh-logo.png" hight="200px" width="200px">
+  <h1>Thinkify Labs TakeAway</h1>
+</div>
 
-In the project directory, you can run:
+# Table of Content 
+- [Linters And Deployment](#linters-and-deployment)
+- [Mocks](#mocks)
+- [Folder Structure](#folder-structure)
+- [Description](#description)
+- [Tech Stack](#tech-stack)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Linters and Deployment 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[![Linters](https://github.com/PowerLevel9000/thinkify-labs-takeaway/actions/workflows/linters.yml/badge.svg)](https://github.com/PowerLevel9000/thinkify-labs-takeaway/actions/workflows/linters.yml) [![Netlify Live Link](https://img.shields.io/badge/Netlify%20Live%20Link-Click%20Here-blue)](https://thinkify-takeaway.netlify.app/) [![Netlify Status](https://api.netlify.com/api/v1/badges/e37e7a4f-4c5a-4b01-9d87-78acb6a9d6eb/deploy-status)](https://app.netlify.com/sites/thinkify-takeaway/deploys)
 
-### `npm test`
+# Mocks
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<div align="center">
+  <img src="./document/mock/desktop.png" width="100%">
+</div>
 
-### `npm run build`
+# Folder structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [src](./src/)
+  - [app (For the redux store)](./src/app/store.js)
+  - [assets (images gif etc)](./src/assets/)
+  - [components (pages and respective shared)](./src/components/)
+    - [pages (contain respective pages and there components)](./src//components/pages/)
+    - [shared (contain components that shared across more than one page)](./src/components/shared/)
+  - [features (respective redux slice and api slices)](./src/features/)
+    - [api (RTK query for th api)](./src/features/api/)
+    - ...
+  - [hooks (contain custom hooks)](./src//hooks/)
+  - [lib (data or type data if needed)](./src/lib/)
+  - [style (contains all styling for the respective components)](./src/style/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Description
+This is just an assignment project for Thinkify Labs as part of the recruitment process.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Tech Stack 
+- [x] React
+- [x] Redux
+- [x] CSS
+- [x] JSX
