@@ -19,6 +19,9 @@ const Drawer = () => {
     backgroundColor: '',
   }));
 
+  // handle form submit
+  // yeah i know my form validation is not relevant here as we are disabled the button
+  // but i like to show as my skills
   const handleSubmit = (e) => {
     e.preventDefault();
 

@@ -40,4 +40,9 @@ select {
   line-height: inherit;
 }
 
+button {
+  cursor: pointer;
+  transition: all 0.8s ease;
+}
+
 /* End of CSS Reset */

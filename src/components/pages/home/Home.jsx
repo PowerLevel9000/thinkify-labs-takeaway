@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import FilterBy from './FilterBy';
 import CapacityBar from './CapacityBar';
@@ -6,24 +6,15 @@ import Title from './Title';
 import Drawer from './Drawer';
 import '../../../style/Home.css';
 import { drawerClose, drawerOpen } from '../../../features/creative-title/titleSlice';
+import useMouseDownOutside from '../../../hooks/useMouseDownOutside';
 
+// Home Page parent component
 const Home = () => {
   const { isDrawerOpen, titles, filteredTitles } = useSelector((state) => state.title);
   const dispatch = useDispatch();
-
-  const asideRef = useRef(null);
-  useEffect(() => {
-    const handleOutsideClick = (e) => {
-      if (asideRef.current && !asideRef.current.contains(e.target)) {
-        dispatch(drawerClose());
-      }
-    };
-    document.addEventListener('mousedown', handleOutsideClick);
-    return () => {
-      document.removeEventListener('mousedown', handleOutsideClick);
-    };
-  }, [dispatch]);
-
+  let asideRef = useRef(null);
+  // close the drawer when clicked outside of it using custom hook
+  asideRef = useMouseDownOutside(asideRef, drawerClose);
   return (
     <>
       <main>
