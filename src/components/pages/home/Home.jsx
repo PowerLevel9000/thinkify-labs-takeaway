@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import FilterBy from './FilterBy';
 import CapacityBar from './CapacityBar';
@@ -14,7 +14,7 @@ const Home = () => {
   const dispatch = useDispatch();
   let asideRef = useRef(null);
   // close the drawer when clicked outside of it using custom hook
-  asideRef = useMouseDownOutside(asideRef, drawerClose)
+  asideRef = useMouseDownOutside(asideRef, drawerClose);
   return (
     <>
       <main>

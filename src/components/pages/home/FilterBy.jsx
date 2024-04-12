@@ -14,7 +14,7 @@ const FilterBy = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // we can use useCallback here to avoid creating a new function on every render 
+    // we can use useCallback here to avoid creating a new function on every render
     // but as we are not rerendering (a lot) this component so it's fine to use it here
     const applyFilters = () => {
       const filteredData = filterData(filters, titles);
