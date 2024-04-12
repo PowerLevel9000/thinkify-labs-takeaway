@@ -15,9 +15,7 @@
 
 # Linters and Deployment 
 
-[![Linters](https://github.com/PowerLevel9000/thinkify-labs-takeaway/actions/workflows/linters.yml/badge.svg)](https://github.com/PowerLevel9000/thinkify-labs-takeaway/actions/workflows/linters.yml)
-
-[![Netlify Live Link](https://img.shields.io/badge/Netlify%20Live%20Link-Click%20Here-blue)]()
+[![Linters](https://github.com/PowerLevel9000/thinkify-labs-takeaway/actions/workflows/linters.yml/badge.svg)](https://github.com/PowerLevel9000/thinkify-labs-takeaway/actions/workflows/linters.yml) [![Netlify Live Link](https://img.shields.io/badge/Netlify%20Live%20Link-Click%20Here-blue)](https://thinkify-takeaway.netlify.app/) [![Netlify Status](https://api.netlify.com/api/v1/badges/e37e7a4f-4c5a-4b01-9d87-78acb6a9d6eb/deploy-status)](https://app.netlify.com/sites/thinkify-takeaway/deploys)
 
 # Mocks
 
