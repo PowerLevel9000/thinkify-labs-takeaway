@@ -52,6 +52,16 @@ aside form .background-colors {
   margin-bottom: 20px;
 }
 
+aside .cross {
+  font-size: x-large;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #282424;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+}
+
 aside form button {
   padding: 10px;
   background-color: #282424;
@@ -140,6 +150,7 @@ aside form button {
   margin: 20px 40px 0 40px;
 }
 
+aside form button:disabled,
 .capacity-bar button:disabled {
   background-color: #ccc;
   cursor: not-allowed;

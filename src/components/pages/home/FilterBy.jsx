@@ -63,10 +63,13 @@ const FilterBy = () => {
         <button
           type="button"
           className="btn-page"
-          onClick={() => setFilters({
-            color: '',
-            search: '',
-          })}
+          onClick={() => {
+            dispatch(filteredTitles([]));
+            setFilters({
+              color: '',
+              search: '',
+            });
+          }}
         >
           Reset Filter
         </button>

@@ -21,6 +21,12 @@ const Drawer = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // form validation
+    // i used this approach to show error message for each field separately
+    // and also to show error message for each field separately
+    // i like form validation for personal test and also for better user experience
+    // but I will also follow the instruction in requirement
     let isError = false;
     const error = {
       title: '',
@@ -61,7 +67,7 @@ const Drawer = () => {
         <h2>Creative Creation</h2>
         <button
           type="button"
-          className="fas fa-times"
+          className="fas fa-times cross"
           onClick={() => dispatch(drawerClose())}
         />
       </div>
@@ -106,7 +112,12 @@ const Drawer = () => {
           ))}
         </div>
         <small>{formDataError.backgroundColor}</small>
-        <button type="submit">Done</button>
+        <button
+          type="submit"
+          disabled={formData.title === '' || formData.subTitle === '' || formData.backgroundColor === ''}
+        >
+          Done
+        </button>
       </form>
     </>
   );
