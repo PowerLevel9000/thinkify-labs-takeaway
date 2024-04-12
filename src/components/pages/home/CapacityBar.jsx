@@ -32,7 +32,7 @@ const CapacityBar = () => {
         <Title
           title="Warning"
           subTitle={"Adding Capacity is Full but don't worry it just a warning, and who cares warnings tell me when we have error 😁😁😁"}
-          backgroundColor="#f00"
+          backgroundColor="rgba(242, 154, 47, 0.821)"
           style={{
             marginTop: '20px',
             color: '#fff',
