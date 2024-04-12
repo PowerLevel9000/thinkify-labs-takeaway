@@ -8,7 +8,8 @@
 }
 
 /* Remove list styles */
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -29,11 +30,14 @@ body {
 }
 
 /* Reset form elements */
-input, textarea, select {
+input,
+textarea,
+select {
   outline: none;
   background: none;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
 }
+
 /* End of CSS Reset */

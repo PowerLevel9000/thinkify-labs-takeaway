@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useGetColorQuery } from '../../../features/api/colors';
-import { useDispatch, useSelector } from 'react-redux';
 import { addTitles, drawerClose } from '../../../features/creative-title/titleSlice';
 
 const Drawer = () => {
@@ -10,13 +10,13 @@ const Drawer = () => {
   const [formData, setFormData] = useState(() => ({
     title: '',
     subTitle: '',
-    backgroundColor: ''
+    backgroundColor: '',
   }));
 
   const [formDataError, setFormDataError] = useState(() => ({
     title: '',
     subTitle: '',
-    backgroundColor: ''
+    backgroundColor: '',
   }));
 
   const handleSubmit = (e) => {
@@ -25,12 +25,12 @@ const Drawer = () => {
     const error = {
       title: '',
       subTitle: '',
-      backgroundColor: ''
-    }
+      backgroundColor: '',
+    };
 
     const fields = ['title', 'subTitle', 'backgroundColor'];
 
-    fields.forEach(field => {
+    fields.forEach((field) => {
       if (!formData[field]) {
         isError = true;
         error[field] = `${field.charAt(0).toUpperCase() + field.slice(1)} is required`;
@@ -42,25 +42,26 @@ const Drawer = () => {
       return;
     }
 
-    dispatch(addTitles(formData))
-    dispatch(drawerClose())
-    setFormData(prevFormData => ({
+    dispatch(addTitles(formData));
+    dispatch(drawerClose());
+    setFormData((prevFormData) => ({
       ...prevFormData,
       title: '',
       subTitle: '',
-      backgroundColor: ''
+      backgroundColor: '',
     }));
-  }
+  };
 
   // as we don't have error and loading page so we are just showing error message and loading status
-  if (loading) return <div>Loading...</div>
-  if (error) return <div>Error</div>
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error</div>;
   return (
     <>
       <div className="card-header">
         <h2>Creative Creation</h2>
-        <i
-          className='fas fa-times'
+        <button
+          type="button"
+          className="fas fa-times"
           onClick={() => dispatch(drawerClose())}
         />
       </div>
@@ -68,47 +69,47 @@ const Drawer = () => {
         <label htmlFor="title">Title</label>
         <input
           type="text"
-          id='title'
+          id="title"
           value={formData.title}
           onChange={(e) => {
-            setFormData({ ...formData, title: e.target.value })
-            setFormDataError({ ...formDataError, title: '' })
+            setFormData({ ...formData, title: e.target.value });
+            setFormDataError({ ...formDataError, title: '' });
           }}
-          placeholder='Enter Title'
+          placeholder="Enter Title"
         />
         <small>{formDataError.title}</small>
         <label htmlFor="sub-title">Subtitle</label>
         <input
           value={formData.subTitle}
           type="text"
-          id='sub-title'
+          id="sub-title"
           onChange={(e) => {
-            setFormData({ ...formData, subTitle: e.target.value })
-            setFormDataError({ ...formDataError, subTitle: '' })
+            setFormData({ ...formData, subTitle: e.target.value });
+            setFormDataError({ ...formDataError, subTitle: '' });
           }}
-          placeholder='Enter Sub Title'
+          placeholder="Enter Sub Title"
         />
         <small>{formDataError.subTitle}</small>
         <label htmlFor="background-color">Background Color</label>
         <div className="background-colors">
           {data && data.colors.map((color) => (
-            <div
+            <button
+              type="button"
               style={{ backgroundColor: color }}
               key={color}
               className={`color-box ${formData.backgroundColor === color ? 'selected' : ''}`}
-              onClick={(e) => {
-                setFormData({ ...formData, backgroundColor: color })
-                setFormDataError({ ...formDataError, backgroundColor: '' })
+              onClick={() => {
+                setFormData({ ...formData, backgroundColor: color });
+                setFormDataError({ ...formDataError, backgroundColor: '' });
               }}
-            >
-            </div>
+            />
           ))}
         </div>
         <small>{formDataError.backgroundColor}</small>
         <button type="submit">Done</button>
       </form>
     </>
-  )
-}
+  );
+};
 
-export default Drawer
+export default Drawer;
